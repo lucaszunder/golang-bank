@@ -7,7 +7,7 @@ import (
 	c "github.com/lucaszunder/banco/customer"
 )
 
-func payDebt(account verifyAccountType, value float64) {
+func payBills(account verifyAccountType, value float64) {
 	account.Withdraw(value)
 }
 
@@ -20,7 +20,7 @@ func main() {
 	account := a.Account{Owner: owner, AgencyNumber: 589, AccountNumber: 4397}
 	account.Deposit(100)
 
-	payDebt(&account, 50.0)
+	payBills(&account, 50.0)
 
 	fmt.Println(account.Balance())
 }
